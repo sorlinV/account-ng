@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Sum</th>
+            <th>category</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td><input type="text" [(ngModel)]="date" name="date"></td>
+            <td><input type="text" [(ngModel)]="desc" name="desc"></td>
+            <td><input type="number" [(ngModel)]="sum" name="sum"></td>
+            <td><input type="text" [(ngModel)]="cath" name="cath"></td>
+            <td><input type="button" (click)="submit()" value="Add"></td>
+        </tr>
+    </tfoot>
+    <tbody>
+    </tbody>
+</table>
