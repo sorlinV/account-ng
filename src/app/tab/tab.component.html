@@ -1,3 +1,5 @@
+<form (submit)="submit()" id="addTransfer"></form>
+
 <table>
     <thead>
         <tr>
@@ -9,13 +11,44 @@
     </thead>
     <tfoot>
         <tr>
-            <td><input type="text" [(ngModel)]="date" name="date"></td>
-            <td><input type="text" [(ngModel)]="desc" name="desc"></td>
-            <td><input type="number" [(ngModel)]="sum" name="sum"></td>
-            <td><input type="text" [(ngModel)]="cath" name="cath"></td>
-            <td><input type="button" (click)="submit()" value="Add"></td>
+            <td><input type="date" [(ngModel)]="date" name="date" form="addTransfer"></td>
+            <td><input type="text" [(ngModel)]="desc" name="desc" form="addTransfer"></td>
+            <td><input type="number" [(ngModel)]="sum" name="sum" form="addTransfer"></td>
+            <td>
+                <select [(ngModel)]="cath" name="cath" form="addTransfer">
+                    <option class="bggreen" value="Revenus professionnels">Revenus professionnels</option>
+                    <option class="bggreen" value="Famille">Famille</option>
+                    <option class="bggreen" value="Revenus de placement">Revenus de placement</option>
+                    <option class="bggreen" value="Autre Revenus">Autre Revenus</option>
+                    <option class="bgred" value="Alimentation">Alimentation</option> 
+                    <option class="bgred" value="Vie quotidienne">Vie quotidienne</option>
+                    <option class="bgred" value="Enfant et Scolarité">Enfant et Scolarité</option>
+                    <option class="bgred" value="Santé">Santé</option>
+                    <option class="bgred" value="Logement/Maison">Logement/Maison</option>
+                    <option class="bgred" value="Véhicule">Véhicule</option>
+                    <option class="bgred" value="Numérique">Numérique</option>
+                    <option class="bgred" value="Loisir">Loisir</option>
+                    <option class="bgred" value="Vacances/weekend">Vacances/weekend</option>
+                    <option class="bgred" value="Animaux">Animaux</option>
+                    <option class="bgred" value="Impôts/Taxes">Impôts/Taxes</option>
+                    <option class="bgred" value="Autre dépenses">Autre dépenses</option>
+                  </select>
+            </td>
+            <td><input type="submit" value="Add" form="addTransfer"></td>
         </tr>
     </tfoot>
     <tbody>
+        <tr *ngFor="let transfer of transfers">
+            <td>{{transfer.date}}</td>
+            <td>{{transfer.desc}}</td>
+            <td>{{transfer.sum}}</td>
+            <td>{{transfer.cath}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Total :</td>
+            <td>{{total}}</td>
+        </tr>
     </tbody>
 </table>
