@@ -1,7 +1,4 @@
-bggreen {
-    background: green;
-}
-
-bgred {
-    background: red;
+table {
+    margin: 0;
+    border: 1px solid black;
 }

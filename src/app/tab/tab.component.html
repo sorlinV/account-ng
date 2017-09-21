@@ -11,11 +11,11 @@
     </thead>
     <tfoot>
         <tr>
-            <td><input type="date" [(ngModel)]="date" name="date" form="addTransfer"></td>
-            <td><input type="text" [(ngModel)]="desc" name="desc" form="addTransfer"></td>
-            <td><input type="number" [(ngModel)]="sum" name="sum" form="addTransfer"></td>
+            <td><input type="date" [(ngModel)]="form.date" name="date" form="addTransfer"></td>
+            <td><input type="text" [(ngModel)]="form.desc" name="desc" form="addTransfer"></td>
+            <td><input type="number" [(ngModel)]="form.sum" name="sum" form="addTransfer"></td>
             <td>
-                <select [(ngModel)]="cath" name="cath" form="addTransfer">
+                <select [(ngModel)]="form.cath" name="cath" form="addTransfer">
                     <option class="bggreen" value="Revenus professionnels">Revenus professionnels</option>
                     <option class="bggreen" value="Famille">Famille</option>
                     <option class="bggreen" value="Revenus de placement">Revenus de placement</option>
@@ -43,6 +43,7 @@
             <td>{{transfer.desc}}</td>
             <td>{{transfer.sum}}</td>
             <td>{{transfer.cath}}</td>
+            <td><button (click)="delete(transfer.id)">Delete</button></td>
         </tr>
         <tr>
             <td></td>

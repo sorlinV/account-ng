@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TabComponent } from './tab/tab.component';
+import { HttpModule }    from '@angular/http';
+import { ApiService } from './api/api.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,9 +14,11 @@ import { TabComponent } from './tab/tab.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
